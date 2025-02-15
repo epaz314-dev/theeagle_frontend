@@ -53,8 +53,8 @@ const Home = ({ showBar, setShowBar, user }) => {
     const fetchUserData = async () => {
       try {
         let result = await users(address);
+        console.log("result:", result);
 
-        // result = [0x0000000000000000000000000000000000000000,2n,0,0,0,0]
         const referralId = Number(result[1])
         console.log("Referral ID:", referralId);
         console.log("result:", result);
@@ -248,6 +248,7 @@ const Home = ({ showBar, setShowBar, user }) => {
                     </h1>
                     <p className="text-lg text-yellow-300 italic font-medium">
                       ID {Number(userData?.[1]) ?? "Loading..."}
+                      Hello
                     </p>
                     <button
                       className="mt-8 text-base flex gap-2 items-center justify-center bg-Background shadow-xl shadow-[#00000079] transition-all ease-in-out text-textColor2 w-44 py-1 rounded-full"
